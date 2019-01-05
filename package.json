@@ -1,9 +1,10 @@
 {
-  "name": "xd-webpack-starter-template",
+  "name": "xd-plugin-boilerplate",
   "version": "1.0.0",
   "description": "A simple plugin, built with the xd-webpack-starter-template package",
   "private": true,
   "scripts": {
+    "start": "npm run debug:watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run compile && xdpm package dist",
     "compile": "webpack --config webpack.config.js --mode production",

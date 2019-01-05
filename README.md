@@ -21,10 +21,13 @@ Does the exact same thing as `npm run build`, but does **not** generate a `dist.
 ### `npm run debug:install`
 This will build (or compile) your plugin and install it in the development folder of Adobe XD once. Please note that this uses the development mode when compiling, making mistakes easier to find. This, however, means your plugin won't get minified.
 
-### `npm run debug:watch`
+### `npm run debug:watch` or `npm start`
 Does the same as `npm run debug:install`, but watches the file system for changes and automatically recompiles and reinstalls the plugin when anything's changed (extremely useful during development).
 
 Please note that you'll still need to run the "Reload plugins" command inside Adobe XD after every new install (may that be via `debug:install` or every time via `debug:watch`).
+
+### `npm run lint`
+Runs the ESLint linter on the `src` folder to check for style errors in your code.
 
 ## Setting up different editors and IDEs
 ### Visual Studio Code
