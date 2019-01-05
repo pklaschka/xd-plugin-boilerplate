@@ -1,6 +1,6 @@
 # Adobe XD plugin boilerplate
 
-A quick start boilerplate to begin a plugin for Adobe XD CC. It uses webpack for bundling and therefore has support for npm modules (for demonstration purposes, it has the `xd-storage-helper` preinstalled). It also comes with the typings (https://github.com/AdobeXD/typings) preconfigured for autocompletion so you can jump-start your plugin.
+A quick start boilerplate to begin a plugin for Adobe XD CC. It uses webpack for bundling and therefore has support for npm modules (for demonstration purposes, it has the [`xd-storage-helper`](https://github.com/pklaschka/xd-storage-helper) preinstalled). It also comes with the typings (https://github.com/AdobeXD/typings) preconfigured for autocompletion so you can jump-start your plugin.
 
 ## Setup
 Once you've cloned the repo, you merely need to run `npm install` in the root folder of the (cloned) project from your console. After that, you'll need to adjust the `manifest.json` in the `dist` folder and after that, you're ready to go.
