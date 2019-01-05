@@ -1,0 +1,27 @@
+{
+  "name": "xd-webpack-starter-template",
+  "version": "1.0.0",
+  "description": "A simple plugin, built with the xd-webpack-starter-template package",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run compile && xdpm package dist",
+    "compile": "webpack --config webpack.config.js --mode production",
+    "debug:install": "webpack --config webpack.config.js --mode development && xdpm install dist",
+    "debug:watch": "xdpm watch dist | webpack --config webpack.config.js --mode development --watch"
+  },
+  "devDependencies": {
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "@adobe/xdpm": "^1.1.2"
+  },
+  "keywords": [
+    "adobe",
+    "xd"
+  ],
+  "author": "Pablo Klaschka",
+  "license": "MIT",
+  "dependencies": {
+    "xd-storage-helper": "^1.1.5"
+  }
+}
