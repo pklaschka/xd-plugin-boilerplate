@@ -1,4 +1,4 @@
-const {Rectangle, RootNode} = require('scenegraph');
+const {RootNode, Rectangle} = require('scenegraph');
 const storage = require('xd-storage-helper');
 
 /**
@@ -8,7 +8,7 @@ const storage = require('xd-storage-helper');
  */
 async function myCommand(selection, root) {
     for (let node of selection.items) {
-        console.log('Previous values: ', await storage.get('width', 'none'), await storage.get('height', 'none'))
+        console.log('Previous values: ', await storage.get('width', 'none'), await storage.get('height', 'none'));
         if (node instanceof Rectangle) {
             node.width *= 2;
             node.height *= 4;
@@ -20,4 +20,4 @@ async function myCommand(selection, root) {
 
 module.exports.commands = {
     myCommand: myCommand
-}
+};

@@ -8,20 +8,22 @@
     "build": "npm run compile && xdpm package dist",
     "compile": "webpack --config webpack.config.js --mode production",
     "debug:install": "webpack --config webpack.config.js --mode development && xdpm install dist",
-    "debug:watch": "xdpm watch dist | webpack --config webpack.config.js --mode development --watch"
+    "debug:watch": "xdpm watch dist | webpack --config webpack.config.js --mode development --watch",
+    "lint": "eslint src/**/*.js --ignore-pattern node_modules/"
+  },
+  "dependencies": {
+    "xd-storage-helper": "^1.1.5"
   },
   "devDependencies": {
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
-    "@adobe/xdpm": "^1.1.2"
+    "@adobe/xdpm": "^1.1.2",
+    "eslint": "^5.12.0"
   },
   "keywords": [
     "adobe",
     "xd"
   ],
   "author": "Pablo Klaschka",
-  "license": "MIT",
-  "dependencies": {
-    "xd-storage-helper": "^1.1.5"
-  }
+  "license": "MIT"
 }
