@@ -25,3 +25,11 @@ This will build (or compile) your plugin and install it in the development folde
 Does the same as `npm run debug:install`, but watches the file system for changes and automatically recompiles and reinstalls the plugin when anything's changed (extremely useful during development).
 
 Please note that you'll still need to run the "Reload plugins" command inside Adobe XD after every new install (may that be via `debug:install` or every time via `debug:watch`).
+
+## Setting up different editors and IDEs
+### Visual Studio Code
+The project should work out of the box in Visual Studio Code, no further configuration should be required.
+
+### JetBrains WebStorm
+1. Activate node autocompletion (Preferences=>Languages & Frameworks=>Node.js and npm=>Enable)
+2. Mark the `types` folder as Resources root (in the project panel)
