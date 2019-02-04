@@ -7,6 +7,7 @@ module.exports = {
     },
     devtool: "none",
     externals: {
+        assets: "assets",
         scenegraph: "scenegraph",
         application: "application",
         commands: "commands",
