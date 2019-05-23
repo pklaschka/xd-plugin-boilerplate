@@ -13,13 +13,13 @@
     "lint": "eslint src/**/*.js --ignore-pattern node_modules/"
   },
   "dependencies": {
-    "xd-storage-helper": "^1.1.5"
+    "xd-storage-helper": "^1.2.0"
   },
   "devDependencies": {
-    "webpack": "^4.21.0",
-    "webpack-cli": "^3.1.2",
-    "@adobe/xdpm": "^1.1.2",
-    "eslint": "^5.12.0"
+    "@adobe/xdpm": "^3.0.1",
+    "eslint": "^5.12.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   },
   "keywords": [
     "adobe",
