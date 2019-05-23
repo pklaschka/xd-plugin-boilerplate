@@ -3,11 +3,26 @@
     "name": "My plugin",
     "version": "0.0.1",
     "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "releaseNotes": "Release note",
+    "keywords": [
+    ],
+    "languages": [
+        "en"
+    ],
+    "website": "https://mywebsite.com",
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
     "icons": [
+        { "width": 24, "height": 24, "path": "icons/icon@1x.png" },
+        { "width": 48, "height": 48, "path": "icons/icon@2x.png" },
+        { "width": 96, "height": 96, "path": "icons/icon@3x.png" },
+        { "width": 144, "height": 144, "path": "icons/icon@4x.png" },
+        { "width": 192, "height": 192, "path": "icons/icon@5x.png" }
     ],
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "19.0"
     },
     "uiEntryPoints": [
         {
