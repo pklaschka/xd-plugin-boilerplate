@@ -5,6 +5,7 @@ stages:
   - build
 
 before_script:
+  - rm package-lock.json
   - npm install -g @adobe/xdpm jest jsdoc
   - npm install
 
