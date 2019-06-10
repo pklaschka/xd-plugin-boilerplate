@@ -1,3 +1,8 @@
+/**
+ * @module main
+ * @desc The main plugin module
+ */
+
 const {RootNode, Rectangle} = require('scenegraph');
 const storage = require('xd-storage-helper');
 
