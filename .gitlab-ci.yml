@@ -1,0 +1,43 @@
+image: node
+
+stages:
+  - test
+  - build
+
+before_script:
+  - rm package-lock.json
+  - npm install -g @adobe/xdpm jest jsdoc
+  - npm install
+
+unit_tests:
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - npm run test --coverage
+
+lint:
+  stage: test
+  allow_failure: true
+  script:
+    - npm run lint
+
+build:
+  stage: build
+  script:
+    - npm run build
+    - ls
+  artifacts:
+    when: on_success
+    name: "plugin-$CI_COMMIT_REF_NAME.xdx"
+    paths:
+      - dist.xdx
+
+build-docs:
+  stage: build
+  script:
+    - npm run docs
+  artifacts:
+    when: on_success
+    name: "plugin-$CI_COMMIT_REF_NAME-docs"
+    paths:
+      - docs

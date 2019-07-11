@@ -25,5 +25,6 @@ module.exports = {
         ],
         "no-unused-vars": 0,
         "no-console": "off",
+        "no-undef": "off"
     }
 };

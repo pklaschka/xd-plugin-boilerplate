@@ -22,15 +22,12 @@
     ],
     "host": {
         "app": "XD",
-        "minVersion": "19.0"
+        "minVersion": "20.0"
     },
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": {
-                "default": "My command",
-                "de": "Mein Kommando"
-            },
+            "label": "My plugin",
             "commandId": "myCommand",
             "shortcut": {
                 "mac": "Cmd+Shift+P",

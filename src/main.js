@@ -1,5 +1,12 @@
+/**
+ * @module main
+ * @desc The main plugin module
+ */
+
 const {RootNode, Rectangle} = require('scenegraph');
 const storage = require('xd-storage-helper');
+
+const uxp = require('uxp');
 
 /**
  * The sample command.
@@ -7,15 +14,15 @@ const storage = require('xd-storage-helper');
  * @param {RootNode} root 
  */
 async function myCommand(selection, root) {
-    for (let node of selection.items) {
-        console.log('Previous values: ', await storage.get('width', 'none'), await storage.get('height', 'none'));
-        if (node instanceof Rectangle) {
-            node.width *= 2;
-            node.height *= 4;
-            await storage.set('width', node.width);
-            await storage.set('height', node.height);
-        }
-    }
+    console.log("My Plugin");
+
+    const UXPFile = uxp.storage.File;
+    const UXPFolder = uxp.storage.Folder;
+    console.log(UXPFile, UXPFolder);
+
+    let folder = uxp.storage.localFileSystem.getDataFolder;
+
+    console.log(folder instanceof UXPFolder, folder instanceof UXPFile);
 }
 
 module.exports.commands = {
