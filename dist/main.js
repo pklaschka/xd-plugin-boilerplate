@@ -95,11 +95,13 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
- * Copyright (c) 2018. by Pablo Klaschka
+ * Copyright (c) 2019. by Pablo Klaschka
  */
 
 const storage = __webpack_require__(/*! uxp */ "uxp").storage;
 const fs = storage.localFileSystem;
+
+let data;
 
 class storageHelper {
     /**
@@ -110,11 +112,14 @@ class storageHelper {
     static async init() {
         let dataFolder = await fs.getDataFolder();
         try {
-            return await dataFolder.getEntry('storage.json');
+            let returnFile = await dataFolder.getEntry('storage.json');
+            data = JSON.parse((await returnFile.read({format: storage.formats.utf8})).toString());
+            return returnFile;
         } catch (e) {
             const file = await dataFolder.createEntry('storage.json', {type: storage.types.file, overwrite: true});
             if (file.isFile) {
                 await file.write('{}', {append: false});
+                data = {};
                 return file;
             } else {
                 throw new Error('Storage file storage.json was not a file.');
@@ -129,13 +134,15 @@ class storageHelper {
      * @return {Promise<*>} The value retrieved from storage. If none is saved, the `defaultValue` is returned.
      */
     static async get(key, defaultValue) {
-        const dataFile = await this.init();
-        let object = JSON.parse((await dataFile.read({format: storage.formats.utf8})).toString());
-        if (object[key] === undefined) {
+        if (!data) {
+            const dataFile = await this.init();
+            data = JSON.parse((await dataFile.read({format: storage.formats.utf8})).toString());
+        }
+        if (data[key] === undefined) {
             await this.set(key, defaultValue);
             return defaultValue;
         } else {
-            return object[key];
+            return data[key];
         }
     }
 
@@ -147,9 +154,8 @@ class storageHelper {
      */
     static async set(key, value) {
         const dataFile = await this.init();
-        let object = JSON.parse((await dataFile.read({format: storage.formats.utf8})).toString());
-        object[key] = value;
-        return await dataFile.write(JSON.stringify(object), {append: false, format: storage.formats.utf8})
+        data[key] = value;
+        return await dataFile.write(JSON.stringify(data), {append: false, format: storage.formats.utf8})
     }
 
     /**
@@ -184,29 +190,37 @@ module.exports = storageHelper;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const {Rectangle, RootNode} = __webpack_require__(/*! scenegraph */ "scenegraph");
+/**
+ * @module main
+ * @desc The main plugin module
+ */
+
+const {RootNode, Rectangle} = __webpack_require__(/*! scenegraph */ "scenegraph");
 const storage = __webpack_require__(/*! xd-storage-helper */ "./node_modules/xd-storage-helper/storage-helper.js");
 
+const uxp = __webpack_require__(/*! uxp */ "uxp");
+
 /**
- * 
+ * The sample command.
  * @param {Selection} selection 
  * @param {RootNode} root 
  */
 async function myCommand(selection, root) {
-    for (let node of selection.items) {
-        console.log('Previous values: ', await storage.get('width', 'none'), await storage.get('height', 'none'))
-        if (node instanceof Rectangle) {
-            node.width *= 2;
-            node.height *= 4;
-            await storage.set('width', node.width);
-            await storage.set('height', node.height);
-        }
-    }
+    console.log("My Plugin");
+
+    const UXPFile = uxp.storage.File;
+    const UXPFolder = uxp.storage.Folder;
+    console.log(UXPFile, UXPFolder);
+
+    let folder = uxp.storage.localFileSystem.getDataFolder;
+
+    console.log(folder instanceof UXPFolder, folder instanceof UXPFile);
 }
 
 module.exports.commands = {
     myCommand: myCommand
-}
+};
+
 
 /***/ }),
 
