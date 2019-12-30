@@ -16,7 +16,7 @@
     "docs": "jsdoc -r src -d docs"
   },
   "dependencies": {
-    "xd-storage-helper": "^1.2.2"
+    "xd-storage-helper": "^1.2.3"
   },
   "devDependencies": {
     "@adobe/xdpm": "^4.0.0",
