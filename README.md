@@ -35,7 +35,6 @@ The project should work out of the box in Visual Studio Code, no further configu
 
 ### JetBrains WebStorm
 1. Activate node autocompletion (Preferences=>Languages & Frameworks=>Node.js and npm=>Enable)
-2. Mark the `types` folder as Resources root (in the project panel)
 
 ## Credits
 To add autocompletion, this boilerplate uses the MIT-licensed Typescript definitions that can be found at https://github.com/AdobeXD/typings.
