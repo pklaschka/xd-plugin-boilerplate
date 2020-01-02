@@ -10,8 +10,6 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
-    strategy:
-      node-version: 12.x
     steps:
       - name: Checkout code
         uses: actions/checkout@master
