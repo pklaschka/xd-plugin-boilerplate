@@ -1,6 +1,6 @@
 {
   "name": "xd-plugin-boilerplate",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "A simple plugin, built with the xd-webpack-starter-template package",
   "private": true,
   "scripts": {
