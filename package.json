@@ -21,7 +21,7 @@
   "devDependencies": {
     "@adobe/xdpm": "^4.0.0",
     "@types/adobe-xd": "AdobeXD/typings",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "jest": "^26.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
