@@ -23,7 +23,7 @@
     "@types/adobe-xd": "AdobeXD/typings",
     "eslint": "^7.5.0",
     "jest": "^26.1.0",
-    "webpack": "^4.44.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "sloc": "^0.2.1",
     "jsdoc": "^3.6.5"
