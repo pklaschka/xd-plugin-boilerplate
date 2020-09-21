@@ -26,7 +26,7 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "sloc": "^0.2.1",
-    "jsdoc": "^3.6.5"
+    "jsdoc": "^3.6.6"
   },
   "keywords": [
     "adobe",
