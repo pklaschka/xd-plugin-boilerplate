@@ -22,7 +22,7 @@
     "@adobe/xdpm": "^4.1.1",
     "@types/adobe-xd": "AdobeXD/typings",
     "eslint": "^7.27.0",
-    "jest": "^27.0.1",
+    "jest": "^27.0.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "sloc": "^0.2.1",
