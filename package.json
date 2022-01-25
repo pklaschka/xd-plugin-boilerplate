@@ -24,7 +24,7 @@
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.1",
+    "webpack-cli": "^4.9.2",
     "sloc": "^0.2.1",
     "jsdoc": "^3.6.9"
   },
